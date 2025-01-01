@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model City {
+  id     Int      @id @default(autoincrement())
+  name   String   @db.VarChar(50)
+  people Person[]
+
+  @@index([name])
+  @@map("cities")
+}
+
+model Person {
+  id       Int    @id @default(autoincrement())
+  fullName String @db.VarChar(200)
+  email    String @db.VarChar(100)
+  cityId   Int
+  city     City   @relation(fields: [cityId], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  @@index([fullName, email])
+  @@map("people")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(50)
+  email    String @unique @db.VarChar(100)
+  password String @db.VarChar(500)
+
+  @@map("users")
+}
