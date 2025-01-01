@@ -4,7 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 import { usersServices } from '@/services';
 import { validation } from '@/middlewares';
 import { jwt, passwordCrypto, getJsonError } from '@/utils';
-import { bodySchema, type BodyProps } from '@/schemas/users/signin';
+import { bodySchema, type BodyProps } from '@/schemas/users/signIn';
 
 const signInValidator = validation({ body: bodySchema });
 
