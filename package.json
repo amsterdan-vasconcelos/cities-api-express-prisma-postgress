@@ -7,9 +7,12 @@
     "start": "node --env-file .env .",
     "dev": "tsx --env-file .env src/server.ts",
     "dev:watch": "tsx watch --env-file .env src/server.ts",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
   },
   "dependencies": {
+    "@prisma/client": "6.1.0",
     "bcryptjs": "2.4.3",
     "express": "4.21.2",
     "helmet": "8.0.0",
