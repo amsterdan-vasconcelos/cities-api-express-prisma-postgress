@@ -4,6 +4,7 @@ export const envSchema = z.object({
   PORT: z.number({ coerce: true }).optional(),
   DATABASE_URL: z.string(),
   NODE_ENV: z.enum(['development', 'production']),
+  JWT_SECRET: z.string(),
 });
 
 type EnvSchema = z.infer<typeof envSchema>;
