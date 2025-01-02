@@ -3,18 +3,18 @@ import { City } from '@/types/models';
 
 type GetAllProps = {
   page: number;
-  limit: number;
+  per_page: number;
   search?: string;
   id?: number;
 };
 
 type GetAll = (filters: GetAllProps) => Promise<City[] | Error>;
 
-const getAll: GetAll = async ({ page, limit, search, id }) => {
+const getAll: GetAll = async ({ page, per_page, search, id }) => {
   try {
     const cities = await prisma.city.findMany({
-      skip: (page - 1) * limit,
-      take: limit,
+      skip: (page - 1) * per_page,
+      take: per_page,
       where: {
         name: { contains: search, mode: 'insensitive' },
       },
