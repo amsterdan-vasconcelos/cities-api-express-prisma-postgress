@@ -7,10 +7,10 @@ export const querySchema = z.object({
       message: 'A page deve conter apenas caracteres numéricos',
     })
     .optional(),
-  limit: z
+  per_page: z
     .string()
     .regex(/^\d+$/, {
-      message: 'O limit deve conter apenas caracteres numéricos',
+      message: 'O per_page deve conter apenas caracteres numéricos',
     })
     .optional(),
   id: z
