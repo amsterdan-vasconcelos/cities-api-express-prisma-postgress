@@ -14,8 +14,8 @@ const updateById: UpdateById = async ({ id, city }) => {
       where: { id },
       data: { ...city },
     });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    console.log('Provider - error:', error);
     return new Error('Erro ao atualizar o registro.');
   }
 };
