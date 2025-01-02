@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 import { testServer, accessToken } from '../jest.setup';
 
-describe('Citys - GET_ALL', () => {
+describe('Cities - GET_ALL', () => {
   it('Busca todos os registros.', async () => {
     const resCreate = await testServer
       .post('/cities')

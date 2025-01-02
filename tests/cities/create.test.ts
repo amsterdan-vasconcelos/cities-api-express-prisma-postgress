@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 import { testServer, accessToken } from '../jest.setup';
 
-describe('Citys - CREATE', () => {
+describe('Cities - CREATE', () => {
   it('Cria registro.', async () => {
     const response = await testServer
       .post('/cities')

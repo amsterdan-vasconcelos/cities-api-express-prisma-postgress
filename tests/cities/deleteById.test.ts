@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 import { testServer, accessToken } from '../jest.setup';
 
-describe('Citys - DELETE_BY_ID', () => {
+describe('Cities - DELETE_BY_ID', () => {
   it('Apaga registro.', async () => {
     const resCreate = await testServer
       .post('/cities')
