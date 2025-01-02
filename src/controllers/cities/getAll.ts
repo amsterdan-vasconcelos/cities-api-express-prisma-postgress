@@ -11,7 +11,7 @@ const getAllValidator = validation({ query: querySchema });
 type GetAll = RequestHandler<unknown, unknown, unknown, QueryProps>;
 
 const getAll: GetAll = async (req, res) => {
-  const { page, limit, search, id = 0 } = req.query;
+  const { page = 1, limit = 10, search, id } = req.query;
 
   const result = await citiesServices.getAll({
     page: Number(page),
